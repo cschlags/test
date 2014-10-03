@@ -1,0 +1,25 @@
+#main-about {
+  .container {
+    z-index: 2;
+    background: $white;
+    &:first-child {
+      margin: {
+        top: -($margin * 4);
+      }
+    }
+  }
+}
+
+#about-hero {
+  background: {
+    image: image-url('hero/about.jpg');
+  }
+  > div {
+    text: {
+      align: center;
+    }
+  }
+  .header {
+    @include font ($font-bold, 42px, 1.2, $black);
+  }
+}

@@ -1,0 +1,63 @@
+h1 {
+  @include header-xlrg;
+}
+
+h2 {
+  @include header-lrg;
+}
+
+h3 {
+  @include header-med;
+}
+
+h4 {
+  @include header-sml;
+}
+
+h5 {
+  @include body-text;
+}
+
+p {
+  @include body-text;
+  margin: {
+    bottom: $margin * 2;
+  }
+}
+
+*,
+*:before,
+*:after {
+  @include font-smoothing();
+  @include backface-visibility(hidden);
+  @include box-sizing(border-box);
+  text-rendering: geometricPrecision;
+}
+
+html,
+body {
+  height: 100%;
+  background: {
+    color: lighten($light, 4%);
+  }
+}
+
+body {
+  color: $dark;
+  font: {
+    family: $font-med;
+    size: 16px;
+  }
+}
+
+.container {
+  @include max-width($large);
+  margin: 0 auto;
+}
+
+main {
+  position: relative;
+  .container {
+    padding: ($margin * 6) ($margin * 4);
+  }
+}

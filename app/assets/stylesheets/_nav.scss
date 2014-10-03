@@ -1,0 +1,266 @@
+#body-pages-home {
+	#nav {
+		background: rgba($darker, 0);
+		&.solid {
+			background: rgba($darker, 1);
+		}
+	}
+}
+
+#nav {
+	@include max-width($large);
+	width: 100%;
+	height: $nav-height;
+	position: fixed;
+	left: 50%;
+	@include transform (translateX(-50%));
+	@include transition (background-color 350ms ease);
+	background: rgba($darker, 1);
+	z-index: 100;
+
+	&:before {
+		content: '';
+		width: 100%;
+		position: absolute;
+		border-top: 4px solid rgba($black, .08);
+	}
+
+}
+
+#nav-logo {
+	width: 278px;
+	background-color: $red;
+	text-indent: -999999px;
+	height: 100%;
+	display: inline-block;
+	background-image: url('logo.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60%;
+	z-index: 999999;
+}
+
+#nav-open {
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	float: right;
+	padding-right: 30px;
+	padding-top: 26px;
+	margin-left: -283px;
+	z-index: -10;
+	width: 100%;
+	height: $nav-height;
+	background-color: rgba($black, .0);
+	@include transition (all 200ms $ease-in-out-quad);
+
+
+	.solid &{
+		color: lighten($dark, 5%);
+
+		&.active {
+			background-color: rgba($black, .0);
+
+		}
+	}
+
+	&.active {
+		background-color: $darker;
+
+		.ham {
+			background-color: $darker;
+			@include transform(rotate(180deg));
+
+			&:before {
+				@include transform(rotate(-45deg));
+				width: 28px;
+			}
+
+			&:after {
+				@include transform(rotate(45deg));
+				width: 28px;
+			}
+		}
+	}
+
+	@include breakpoint ($medium) {
+		display: inline-block;
+	}
+}
+
+#nav-open-caption {
+	text-transform: capitalize;
+	@include font ($font-bold, 15px, 1.4, $white);
+	text-shadow: 0 1px 1px rgba($black, .15);
+	position: absolute;
+	top: 26px;
+	right: 75px;
+	@include breakpoint ($small) {
+		display: none;
+	}
+}
+
+#nav-open-hamburger {
+	vertical-align: middle;
+	display: inline-block;
+	text-indent: -99999px;
+	height: 2px;
+	width: 25px;
+	background-color: $white;
+	margin-left: 20px;
+	position: absolute;
+	right: 30px;
+	top: 36px;
+	@include transition (all 450ms $ease-out-quad);
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		top: -10px;
+		right: 0;
+		height: 2px;
+		width: 25px;
+		background-color: $white;
+		@include transform-origin(right center);
+		@include transition (all 200ms $ease-out-quad);
+	}
+
+	&:after {
+		top: 10px;
+		@include transform-origin(right center);
+	}
+
+}
+
+#nav-menu {
+	float: right;
+	display: inline-block;
+	padding-right: 30px;
+	opacity: 1;
+
+	li {
+		position: relative;
+		display: inline-block;
+		margin-right: 44px;
+		height: $nav-height;
+
+		&:before {
+			background-color: $white;
+			height: 4px;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			opacity: 0;
+			@include transform (scaleX(0));
+			@include transition (all 200ms $ease-in-out-quad);
+
+		}
+
+		&:hover,
+		&.active {
+			a {
+				color: $white;
+			}
+			&:before {
+				opacity: 1;
+				@include transform (scaleX(1));
+			}
+		}
+
+		&:last-child {
+			margin: {
+				right: 0;
+			}
+		}
+
+	}
+
+	a {
+		@include transition (all 300ms $ease-out-back);
+		@include font ($font-bold, 15px, 1.4, lighten($dark, 5%));
+		text-shadow: 0 1px 1px rgba($black, .15);
+		text-decoration: none;
+		padding-top: 26px;
+		height: $nav-height;
+		display: block;
+	}
+
+	@include breakpoint ($medium) {
+		float: none;
+		width: 100%;
+		height: 1400px;
+		overflow: hidden;
+		background-color: rgba($black, .92);
+		opacity: 0;
+		max-height: 0;
+		padding-right: 0;
+
+		li {
+			display: block;
+			text-align: right;
+			margin-right: 0;
+		}
+
+		&.out {
+			@include animation(nav-out 500ms 1 ease forwards);
+
+		}
+		&.active {
+			@include animation(nav-in 500ms 1 ease forwards);
+
+			li {
+				a {
+					opacity: 1;
+					@include transform (translateY(0));
+				}
+			}
+
+			li:nth-of-type(1) {
+				a {
+					@include transition-delay(80ms);
+				}
+			}
+			li:nth-of-type(2) {
+				a {
+					@include transition-delay(120ms);
+				}
+			}
+			li:nth-of-type(3) {
+				a {
+					@include transition-delay(160ms);
+				}
+			}
+			li:nth-of-type(4) {
+				a {
+					@include transition-delay(200ms);
+				}
+			}
+			li:nth-of-type(5) {
+				a {
+					@include transition-delay(240ms);
+				}
+			}
+			li:nth-of-type(6) {
+				a {
+					@include transition-delay(280ms);
+				}
+			}
+		}
+
+		li {
+			&:before {
+				display: none;
+			}
+			a {
+				@include transition (all 500ms $ease-in-out-back);
+				@include transform (translateY(30px));
+				opacity: 0;
+			}
+		}
+	}
+}

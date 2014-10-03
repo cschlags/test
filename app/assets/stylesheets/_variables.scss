@@ -1,0 +1,75 @@
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2c3b91");
+
+@font-face {
+	font: {
+		family: 'NeuzeitGro-Bol'
+	}
+	src: asset-url('2C3B91_0_0.eot');
+	src: asset-url('2C3B91_0_0.eot?#iefix') format('embedded-opentype'),
+		asset-url('2C3B91_0_0.woff') format('woff'),
+		asset-url('2C3B91_0_0.ttf') format('truetype');
+}
+
+@font-face {
+	font: {
+		family: 'NeuzeitGro-Lig'
+	}
+	src: asset-url('2C3B91_1_0.eot');
+	src: asset-url('2C3B91_1_0.eot?#iefix') format('embedded-opentype'),
+		asset-url('2C3B91_1_0.woff') format('woff'),
+		asset-url('2C3B91_1_0.ttf') format('truetype');
+}
+
+@font-face {
+	font: {
+		family: 'NeuzeitGro-Reg'
+	}
+	src: asset-url('2C3B91_2_0.eot');
+	src: asset-url('2C3B91_2_0.eot?#iefix') format('embedded-opentype'),
+		asset-url('2C3B91_2_0.woff') format('woff'),
+		asset-url('2C3B91_2_0.ttf') format('truetype');
+}
+
+.NeuzeitGro-Bol {
+	font-family: NeuzeitGro-Bol;
+	font-weight: normal;
+	font-style: normal;
+}
+.NeuzeitGro-Lig {
+	font-family: NeuzeitGro-Lig;
+	font-weight: normal;
+	font-style: normal;
+}
+.NeuzeitGro-Reg {
+	font-family: NeuzeitGro-Reg;
+	font-weight: normal;
+	font-style: normal;
+}
+
+//fonts
+$font-bold: NeuzeitGro-Bol;
+$font-med: NeuzeitGro-Reg;
+$font-light: NeuzeitGro-Lig;
+
+$red: #e01616;
+$red-dark: darken($red, 6%);
+
+$white: #ffffff;
+$black: #0a0a0b;
+
+$lighter: lighten($black, 93%);
+$light: lighten($black, 85%);
+$dark: lighten($black, 40%);
+$darker: lighten($black, 15%);
+
+$height:	5px;
+$nav-height: 70px;
+$footer-height: 540px;
+
+$medium: max-width 925px;
+$small: max-width 700px;
+
+$large: 1440px;
+
+$margin: 12px;

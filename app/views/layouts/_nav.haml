@@ -1,0 +1,12 @@
+%nav#nav
+  #nav-logo logo
+  #nav-open
+    #nav-open-caption menu
+    #nav-open-hamburger hamburger menu
+  = nav_parent id: 'nav-menu' do
+    = nav_link_to "Tour", tour_path
+    = nav_link_to "Clients", clients_path
+    = nav_link_to "News", posts_path
+    = nav_link_to "About", about_path
+    = nav_link_to "Support", "#"
+    = nav_link_to "Installations", "#"

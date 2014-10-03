@@ -1,0 +1,106 @@
+#main-tour {
+  background: $white;
+  .container {
+    &.small {
+      @include max-width($large * .6);
+    }
+  }
+}
+
+#tour-hero {
+  background: $light;
+  > div {
+    text: {
+      align: center;
+    }
+  }
+}
+
+#tour-hero-header {
+  @include font ($font-bold, 37px, 1.2, $red);
+  display: inline-block;
+  border: {
+    bottom: 1px solid $red;
+  }
+  margin: {
+    bottom: 25px;
+  }
+}
+
+#tour-hero-subheader {
+  @include font ($font-light, (37px / 2), 1.4, $darker);
+}
+
+#tour-second-hero {
+  background: {
+    image: image-url('hero/tour.jpg');
+  }
+}
+
+// Templates
+
+.tour-list-header {
+  text: {
+    align: center;
+  }
+  padding: {
+    bottom: 50px;
+  }
+}
+
+.tour-list {
+  > div {
+    width: span(6);
+    padding: 0 25px;
+    display: inline-block;
+  }
+  @include breakpoint ($medium) {
+    > div {
+      width: span(12);
+      padding: 25px 0;
+    }
+  }
+  ul {
+    background: $darker;
+    border: {
+      top: 3px solid $red;
+    }
+    margin: {
+      top: $margin;
+    }
+  }
+  li {
+    @include font ($font-light, 14px, 1.2, $light);
+    padding: ($margin * 3);
+    border: {
+      bottom: 1px solid $dark;
+    }
+  }
+  header {
+    padding: {
+      bottom: $margin;
+    }
+  }
+}
+
+.tour-quote-hero {
+  background: red;
+  padding: 100px 0;
+  text: {
+    align: center;
+  }
+  @include breakpoint ($medium) {
+    padding: 50px;
+  }
+  @include breakpoint ($small) {
+    padding: 25px;
+  }
+}
+
+.tour-quote-hero-quote {
+  @include font ($font-bold, 37px, 1.4, $white);
+}
+
+.tour-quote-hero-author {
+  @include font ($font-light, (37px / 2), 1.4, $white);
+}

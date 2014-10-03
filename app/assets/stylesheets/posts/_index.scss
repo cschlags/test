@@ -1,0 +1,22 @@
+#main-posts-index {
+  .container {
+    z-index: 2;
+    background: $white;
+    &:first-child {
+      margin: {
+        top: -($margin * 4);
+      }
+    }
+  }
+}
+
+#posts-index-hero {
+  background: {
+    image: image-url('hero/posts.jpg');
+  }
+  > div {
+    text: {
+      align: center;
+    }
+  }
+}

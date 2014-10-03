@@ -1,0 +1,44 @@
+#main-home {
+  background: $white;
+}
+
+#home-hero {
+  background: {
+    image: image-url('hero/home.jpg');
+  }
+  .header {
+    @include font ($font-bold, 42px, 1.2, $white);
+    display: inline-block;
+    margin: {
+      bottom: 10px;
+    }
+    border: {
+      bottom: 1px solid rgba($white, .3);
+    }
+  }
+  .subheader {
+    @include font ($font-med, 16px, 1.4, $white);
+  }
+  @include breakpoint ($medium) {
+    margin: 0 auto;
+    text: {
+      align: center;
+    }
+  }
+}
+
+#home-services {
+  @include clearfix();
+  margin: {
+    top: gutter();
+  }
+  > div {
+    @include span(4);
+    margin: {
+      bottom: gutter();
+    }
+    &:nth-child(3n+3) {
+      @include span(4 last);
+    }
+  }
+}

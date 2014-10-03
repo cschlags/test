@@ -1,0 +1,11 @@
+development:
+  adapter: "mysql2"
+  database: "vid_development"
+  username: "root"
+  password: ""
+
+production:
+  adapter: "mysql2"
+  database: "vid_production"
+  username: "root"
+  password: ""

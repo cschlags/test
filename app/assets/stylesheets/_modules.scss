@@ -1,0 +1,78 @@
+.line-header {
+
+  position: relative;
+  text: {
+    align: center;
+  }
+  margin: {
+    bottom: 24px;
+  }
+
+  &:before {
+    content: "";
+    background: $light;
+    height: 1px;
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 0;
+    right: 0;
+  }
+
+  > div {
+    background: $white;
+    display: inline-block;
+    padding: 0 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+}
+
+.hero {
+
+  height: 580px;
+  background: {
+    color: $lighter;
+    size: cover;
+    position: 50% 10%;
+  }
+  text: {
+    align: center;
+  }
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical: {
+      align: middle;
+    }
+    margin: {
+      right: -0.25em;
+    }
+  }
+
+  > div {
+    @include max-width($large);
+    width: 98%;
+    text: {
+      align: left;
+    }
+    display: inline-block;
+    vertical: {
+      align: middle;
+    }
+  }
+
+  &.small {
+    height: 400px;
+  }
+
+}
+
+.center {
+  text: {
+    align: center;
+  }
+}

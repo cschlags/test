@@ -1,0 +1,235 @@
+//animation
+
+@include keyframes( nav-in ) {
+  0% {
+    max-height: 0px;
+    padding-right: 0px;
+  }
+  1% {
+  	max-height: 1500px;
+  	padding-right: 30px;
+    opacity: 0;
+
+  }
+  100% {
+  	opacity: 1;
+  	max-height: 1500px;
+  	padding-right: 30px;
+
+  }
+}
+
+@include keyframes( nav-out ) {
+  0% {
+  	max-height: 1500px;
+  	padding-right: 30px;
+    opacity: 1;
+  }
+  99% {
+  	max-height: 1500px;
+  	padding-right: 30px;
+    opacity: 0;
+
+  }
+  100% {
+  	max-height: 0px;
+  	padding-right: 0px;
+  	opacity: 0;
+
+
+  }
+}
+
+//global
+
+@mixin font-smoothing($value: antialiased) {
+  @if $value == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+@mixin font ($font, $size, $line-height, $color) {
+	font-family: $font;
+	font-size: $size;
+	line-height: $line-height;
+	color: $color;
+}
+
+@mixin v-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+//style-guide
+@mixin s-caption {
+	@include font ($font-med, 15px, 1.4, $dark);
+	text-align: right;
+}
+
+@mixin s-title {
+	@include font ($font-bold, 18px, 1.4, $dark);
+	font-weight: 500;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+
+
+//typography
+
+@mixin max-width ($size) {
+  max-width: $size;
+}
+
+@mixin lead-text {
+	@include font ($font-light, 30px, 1.7, darken($light, 10%));
+
+	&:after {
+		content: '';
+		background-color: $red;
+		border-radius: 100%;
+		width: 4px;
+		height: 4px;
+		display: inline-block;
+		margin-left: -5px;
+	}
+}
+
+@mixin eyebrow {
+	@include font ($font-bold, 16px, 1.4, $dark);
+}
+
+@mixin header-xlrg {
+	@include font ($font-light, 37px, 1.4, $dark);
+	letter-spacing: -1px;
+}
+
+@mixin header-lrg {
+	@include font ($font-bold, 30px, 1.4, $darker);
+	letter-spacing: -1px;
+	&:after {
+		content: '';
+		background-color: $red;
+		border-radius: 100%;
+		width: 4px;
+		height: 4px;
+		display: inline-block;
+	}
+}
+
+@mixin header-med {
+	@include font ($font-bold, 24px, 1.4, $darker);
+	letter-spacing: -1px;
+  position: relative;
+	&:after {
+		content: '';
+    margin-left: 4px;
+		background-color: $red;
+		border-radius: 2px;
+		width: 4px;
+		height: 4px;
+		display: inline-block;
+	}
+}
+
+@mixin header-sml {
+	@include font ($font-bold, 18px, 1.4, $darker);
+	letter-spacing: -1px;
+}
+
+@mixin body-text {
+	@include font ($font-med, 16px, 1.4, $dark);
+}
+
+@mixin links {
+	position: relative;
+	a {
+		@include font ($font-bold, 16px, 1.4, $darker);
+		display: inline;
+		position: relative;
+		text-decoration: none;
+
+		&:before {
+			content: '';
+			height: 1px;
+			width: 100%;
+			bottom: -2px;
+			left: 0;
+			position: absolute;
+			background-color: $dark;
+			@include transition (all 400ms $ease-in-out-quad);
+			@include transform(scaleX(0));
+		}
+
+		&:hover:before {
+			@include transform(scaleX(1));
+
+		}
+	}
+}
+
+@mixin nav-links {
+	position: relative;
+	display: inline-block;
+	margin-right: 44px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+	a {
+		@include font ($font-bold, 15px, 1.4, $lighter);
+		text-shadow: 0 1px 1px rgba($black, .15);
+		display: inline-block;
+		position: relative;
+		text-decoration: none;
+	}
+
+	@include breakpoint ($medium) {
+		display: block;
+		text-align: right;
+		margin-right: 0;
+	}
+}
+
+@mixin homepage-header {
+	@include font ($font-bold, 42px, 1.2, $white);
+	border-bottom: 1px solid rgba($white, .3);
+	display: inline-block;
+	clear: both;
+
+	@include breakpoint ($medium) {
+		text-align: center;
+		display: table;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@mixin homepage-eyebrow {
+	@include font ($font-med, 16px, 1.4, $white);
+	display: block;
+	clear: both;
+
+	@include breakpoint ($medium) {
+		text-align: center;
+		display: table;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@mixin prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}

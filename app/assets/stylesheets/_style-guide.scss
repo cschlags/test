@@ -1,0 +1,250 @@
+//susy-setup
+
+
+
+
+//layout and stuff
+.wrapper {
+	position: relative;
+	min-height: 100%;
+	overflow: hidden;
+	@include container(1440px);
+	background-color: $white;
+	margin-top: -80px;
+	margin-bottom: -$footer-height;
+
+	&:after {
+		content:'';
+		display: block;
+		height: $footer-height;
+	}
+}
+
+
+// header {
+// 	@include container;
+// 	height: 550px;
+// 	position: relative;
+// 	background: url('header.jpg');
+// 	background-size: cover;
+// 	background-position: 50% 10%;
+// 	&:before {
+// 		content: '';
+// 		opacity: .15;
+// 		width: 100%;
+// 		height: 100%;
+// 		position: absolute;
+// 		background-color: $black;
+// 	}
+// 	.hero-inner-wrapper {
+// 		@include container (1440px);
+// 		height: 100%;
+//
+// 		.homepage-eyebrow {
+// 			@include homepage-eyebrow;
+// 			padding-top: 200px;
+//
+//
+// 			@include breakpoint (max-width 1440px) {
+// 				@include isolate (2);
+// 			}
+//
+// 			@include breakpoint ($medium) {
+// 				float: none;
+// 				margin-right: auto;
+// 				margin-left: auto;
+// 			}
+//
+// 		}
+// 		.homepage-header {
+// 			@include homepage-header;
+//
+// 			@include breakpoint (max-width 1440px) {
+// 				@include isolate (2);
+// 			}
+//
+// 			@include breakpoint ($medium) {
+// 				float: none;
+// 				margin-right: auto;
+// 				margin-left: auto;
+// 			}
+//
+// 		}
+//
+// 	}
+// }
+
+
+.row {
+	@include span(12);
+
+	padding-top: 50px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid $light;
+
+	&:last-child {
+		border-bottom: 0;
+	}
+
+	div {
+
+		margin-bottom: $height*5;
+
+	}
+	.title {
+		@include isolate (7);
+		@include span (5);
+		@include s-title;
+	}
+
+	.caption {
+		@include isolate (3);
+		@include span (2);
+		@include break;
+		@include s-caption;
+	}
+
+	.rule {
+		@include isolate (1);
+		@include span (2);
+		border-top: 1px solid $light;
+		text-indent: -9999999px;
+
+	}
+	.content {
+		@include span (5);
+
+	}
+}
+
+
+@include breakpoint($medium) {
+
+  .row {
+
+  	.title {
+  		@include isolate (6);
+  		@include span (5);
+
+  	}
+
+  	.caption {
+  		@include isolate (2);
+  		@include span (3);
+
+  	}
+
+  	.rule {
+  		@include isolate (1);
+  		@include span (1);
+
+
+  	}
+  	.content {
+  		@include span (6);
+  	}
+  }
+}
+
+
+@include breakpoint($small) {
+
+  .row {
+
+  	padding-top: 10px;
+  	padding-bottom: 10px;
+
+  	.title {
+  		@include isolate (2);
+  		@include span (10);
+  		margin-top: 50px;
+  		margin-bottom: 25px;
+
+  	}
+
+  	.caption {
+  		@include isolate (2);
+  		@include span (6);
+  		text-align: left;
+
+  	}
+
+  	.rule {
+  		@include isolate (2);
+  		@include break;
+
+
+  	}
+  	.content {
+  		@include isolate (2);
+  		@include break;
+  		@include span (10);
+  		margin-bottom: 50px;
+  	}
+  }
+}
+
+//styles
+
+.colors {
+	text-indent: -999999px;
+	div {
+		height: $height*8;
+	}
+	.red {
+		background-color: $red;
+	}
+	.red-dark {
+		background-color: $red-dark;
+	}
+	.black {
+		background-color: $black;
+	}
+	.darker {
+		background-color: $darker;
+	}
+	.dark {
+		background-color: $dark;
+	}
+	.light {
+		background-color: $light;
+	}
+	.lighter {
+		background-color: $lighter;
+	}
+	.white {
+		border: 1px solid $light;
+		background-color: $white;
+	}
+}
+
+.typography {
+	.header-xlrg {
+		@include header-xlrg;
+	}
+	.header-lrg {
+		@include header-lrg;
+	}
+	.header-med {
+		@include header-med;
+	}
+	.header-sml {
+		@include header-sml;
+	}
+	.body-text {
+		@include body-text;
+	}
+	.links {
+		@include links;
+	}
+	.nav-links {
+		@include nav-links;
+	}
+	.eyebrow {
+		@include eyebrow;
+	}
+	.lead-text {
+		@include lead-text;
+	}
+
+}
