@@ -1,4 +1,4 @@
-class Attribute < ActiveRecord::Base
+class Component < ActiveRecord::Base
 
   belongs_to :section
 

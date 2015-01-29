@@ -2,8 +2,8 @@ class Section < ActiveRecord::Base
 
   belongs_to :category
   belongs_to :template
-  has_many :attributes
-  accepts_nested_attributes_for :attributes
+  has_many :components
+  accepts_nested_attributes_for :components
 
   validates :category,
     presence: true

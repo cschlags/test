@@ -1,6 +1,6 @@
-class CreateAttributes < ActiveRecord::Migration
+class CreateComponents < ActiveRecord::Migration
   def change
-    create_table :attributes do |t|
+    create_table :components do |t|
       t.references :section, index: true
       t.string :name
       t.text :value

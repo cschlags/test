@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128035226) do
+ActiveRecord::Schema.define(version: 20150129035226) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,14 +46,6 @@ ActiveRecord::Schema.define(version: 20150128035226) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "attributes", force: true do |t|
-    t.integer "section_id"
-    t.string  "name"
-    t.text    "value"
-  end
-
-  add_index "attributes", ["section_id"], name: "index_attributes_on_section_id", using: :btree
-
   create_table "categories", force: true do |t|
     t.string "name"
     t.string "slug"
@@ -61,9 +53,21 @@ ActiveRecord::Schema.define(version: 20150128035226) do
 
   create_table "clients", force: true do |t|
     t.string   "name"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "components", force: true do |t|
+    t.integer "section_id"
+    t.string  "name"
+    t.text    "value"
+  end
+
+  add_index "components", ["section_id"], name: "index_components_on_section_id", using: :btree
 
   create_table "installations", force: true do |t|
     t.string   "label"
