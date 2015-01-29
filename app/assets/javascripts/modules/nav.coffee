@@ -1,6 +1,7 @@
 class Nav extends App
 
   selectors:
+    body: 'body'
     parent: '#nav'
     trigger: '#nav-open'
     list: '#nav-menu'
@@ -9,7 +10,7 @@ class Nav extends App
   classes:
     active: 'active'
     out: 'out'
-    solid: 'solid'
+    above: 'body-above'
 
   intervals:
     out: 500
@@ -18,11 +19,12 @@ class Nav extends App
     'click #nav-open': 'handleTriggerClick'
 
   initialize: ->
+    @handleScroll()
     $(window).on 'scroll', @handleScroll.bind(@)
 
   handleScroll: ->
     top = $(window).scrollTop()
-    if top > 400 then @$('parent').addClass(@classes.solid) else @$('parent').removeClass(@classes.solid)
+    if top > 400 then @$('body').removeClass(@classes.above) else @$('body').addClass(@classes.above)
 
   handleTriggerClick: (e, el) ->
     $(el).toggleClass @classes.active

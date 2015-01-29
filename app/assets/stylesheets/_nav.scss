@@ -1,8 +1,12 @@
 #body-pages-home {
-	#nav {
-		background: rgba($darker, 0);
-		&.solid {
-			background: rgba($darker, 1);
+	&.body-above {
+		#nav {
+			background: rgba($darker, 0);
+		}
+		#nav-menu {
+			a {
+				color: white;
+			}
 		}
 	}
 }
