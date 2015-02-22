@@ -13,5 +13,6 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require_directory ./vendor
 //= require base
 //= require_directory ./modules
