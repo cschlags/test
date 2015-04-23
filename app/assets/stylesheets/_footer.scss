@@ -93,7 +93,7 @@
 	}
 	.beta {
 		background-color: $darker;
-		height: $height*57;
+		height: $height*60;
 		text-align: center;
 
 		@include breakpoint ($small) {
@@ -193,7 +193,7 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: $height*9;
+		height: $height*6;
 		display: block;
 		color: $dark;
 		background-color: lighten($darker, 3%);
