@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 20150129035226) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "admins", force: true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "remember_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "categories", force: true do |t|
     t.string "name"
     t.string "slug"
@@ -53,10 +61,6 @@ ActiveRecord::Schema.define(version: 20150129035226) do
 
   create_table "clients", force: true do |t|
     t.string   "name"
-    t.string   "logo_file_name"
-    t.string   "logo_content_type"
-    t.integer  "logo_file_size"
-    t.datetime "logo_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

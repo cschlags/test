@@ -8,6 +8,8 @@ VID::Application.routes.draw do
   get "/tour", to: "pages#tour", as: :tour
   get "/clients", to: "pages#clients", as: :clients
   get "/about", to: "pages#about", as: :about
+  get "/support", to: "pages#support", as: :support
+  get "/installations", to: "pages#installations", as: :installations
 
   resources :posts, only: [ :index, :show ]
 

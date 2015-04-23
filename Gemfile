@@ -19,6 +19,7 @@ gem 'therubyracer',  platforms: :ruby
 gem 'paperclip'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'railties'
 
 group :doc do
   gem 'sdoc', require: false

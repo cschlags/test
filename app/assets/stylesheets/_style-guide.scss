@@ -10,8 +10,7 @@
 	overflow: hidden;
 	@include container(1440px);
 	background-color: $white;
-	margin-top: -80px;
-	margin-bottom: -$footer-height;
+  margin-bottom: -$footer-height;
 
 	&:after {
 		content:'';

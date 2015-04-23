@@ -3,13 +3,16 @@
     .container
       .signup-title Get News &amp; Updates
       .signup-form
-        %input#email{type: "text"}/
-        %label#email-label{for: "email"} Enter E-mail Address
+        %input#email{type: "text", :placeholder => "Enter Email Address"}
+        %label#email-label{for: "email"}
         %button{type: "submit"} Go
   .beta
     .container
-      .address 150 Coolidge Ave, Englewood, NJ, 07631 •  +1.732.969.8000 • Email Us
-      .location-title Our Location
+      .address
+        = link_to "150 Coolidge Ave, Englewood, NJ, 07631 •  ", "https://www.google.com/maps/place/150+Coolidge+Ave,+Englewood,+NJ+07631/@40.8867317,-73.9877395,17z/data=!3m1!4b1!4m2!3m1!1s0x89c2f0d975c3035d:0x939e9f0f92591822"
+        = link_to "+1.732.969.8000 • ", "tel:17329698000"
+        = link_to "Email Us", "mailto:christinaleuci@gmail.com"
+      .location-title Our Locations
       %ul.location-list
         %li.location-list-item= link_to "NYC", "#"
         %li.location-list-item= link_to "Englewood", "#"
@@ -18,4 +21,4 @@
         %li.location-list-item= link_to "Shanghai", "#"
   .gamma
     .container
-      .copywright &copy; 2014 Visual Image Display
+      .copywright &copy; 2015 Visual Image Display
